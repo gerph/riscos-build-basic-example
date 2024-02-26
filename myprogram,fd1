@@ -1,0 +1,13 @@
+REM>myprogram
+REM Generate a simple table of data
+DIM P% 256
+
+FOR j%=0 TO 255
+   SYS"Sound_SoundLog",(j%<<24) EOR &80000000 TO val%
+   P%?j%=val%
+NEXT
+
+SYS "OS_File", 10, "data", &FFD,, P%, P%+256
+
+REM Copy the file to the clipboard to return to the caller
+*Clipboard_FromFile data
