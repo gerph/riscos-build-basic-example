@@ -22,5 +22,11 @@ if you've built the tool there) and run the supplied program.
 
 ## Using curl
 
-(FIXME)
+The service can also build simple binaries by being sent a file or
+archive as a POST, and then returns you the binary output. Using
+this method, there is no output returned unless the program exits
+with a failure.
+
+The script `build-with-curl.sh` will run on Linux or MacOS systems
+and run the supplied program.
 

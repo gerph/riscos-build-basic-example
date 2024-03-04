@@ -19,6 +19,6 @@ else
     RISCOS_BUILD_ONLINE=riscos-build-online
 fi
 
-# Send the archive file to build service
+# Send the program to build service
 echo Run on the build service
 "${RISCOS_BUILD_ONLINE}" -i myprogram,fd1 -o data
