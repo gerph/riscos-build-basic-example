@@ -4,10 +4,17 @@
 # tool. Useful on Linux as part of CI.
 # On other systems you may have to build the tool yourself.
 #
-# Syntax: build-with-riscos-build-online.sh
+# The submission code examples come from here:
+#
+#   https://build.riscos.online/ci-build.html#robuild
+#
+# Syntax: build-with-riscos-build-online.sh [<input-file> [<output-prefix>]]
 #
 
 set -eo pipefail
+
+input_file="${1:-myprogram,fd1}"
+output_prefix="${2:-data}"
 
 # Fetch the build client
 echo Obtain build client
@@ -21,4 +28,4 @@ fi
 
 # Send the program to build service
 echo Run on the build service
-"${RISCOS_BUILD_ONLINE}" -i myprogram,fd1 -o data
+"${RISCOS_BUILD_ONLINE}" -i "${input_file}" -o "${output_prefix}"
